@@ -1,0 +1,100 @@
+STRING:
+1> package string;
+import java.util.*;
+public class Example1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//String st = sc.next();
+		//System.out.println(st);
+String name = "Anshuman";
+//System.out.println(name);
+
+
+//System.out.println(name.substring(1));
+//System.out.println(name.substring(1,4));
+
+//System.out.println(name.replace(oldChar:'s', newChar:'p'));(work in intellij)
+//System.out.println(name.replace(target: "s", replacement: "fers"));(work in intellij)
+
+//System.out.println(name.charAt(4));
+System.out.println(name.indexOf("s"));
+	}
+
+}
+
+
+2> package string;
+
+import java.util.Locale;
+
+public class String_Methods {
+    public static void main(String[] args) {
+        String name = "anshu";
+//        System.out.println(name);
+        int value = name.length();
+//        System.out.println(value);
+
+        String lstring = name.toLowerCase();
+//        System.out.println(lstring);
+
+        String ustring = name.toUpperCase();
+//        System.out.println(ustring);
+
+        String nonTrimmedString = "        anshu      ";
+//        System.out.println(nonTrimmedString);
+//        System.out.println(nonTrimmedString.trim());
+
+//        System.out.println(name.substring(2));
+//        System.out.println(name.substring(1, 4));
+
+        String nameReplace = name.replace('a', 'k');
+        //System.out.println(nameReplace);
+
+//        System.out.println(name.startsWith("ans"));
+//        System.out.println(name.startsWith("Ans"));
+//        System.out.println(name.endsWith("maan"));
+//        System.out.println(name.endsWith("shu"));
+//        System.out.println(name.charAt(3));
+//        System.out.println(name.indexOf('s'));
+     String modifiedName = "anshuman";
+        System.out.println(modifiedName.indexOf("man",4));
+    }
+}
+
+
+LINKED LIST : 
+1> package LinkedList;
+import java.util.*;
+
+
+public class LinkedList1 {
+        public static void main(String[] args) {
+            LinkedList<Integer> l1 = new LinkedList<>();
+            LinkedList<Integer> l2 = new LinkedList<>();
+            l2.add(15);
+            l2.add(18);
+            l2.add(19);
+
+            l1.add(6);
+            l1.add(7);
+            l1.add(4);
+            l1.add(6);
+            l1.add(0, 5);
+            l1.add(0, 1);
+            l1.addAll(0, l2);
+            l1.addLast(676);
+            l1.addFirst(788);
+            System.out.println(l1.contains(27));
+            System.out.println(l1.indexOf(6));
+            System.out.println(l1.lastIndexOf(6));
+            //l1.clear();
+            l1.set(1, 566);
+            for(int i=0; i<l1.size(); i++){
+                System.out.print(l1.get(i));
+                System.out.print(", ");
+            }
+        }
+    }
+
+

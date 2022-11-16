@@ -1,0 +1,52 @@
+Integer to Roman : 
+class Solution {
+    public String intToRoman(int num) {
+          if(num <= 0) return "";
+	        String[] roman = {"M", "CM","D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+	        int[] n = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+	        StringBuilder sb = new StringBuilder();
+	        for(int i = 0; num != 0; i++){
+	            while(num >= n[i]){
+	                num -= n[i];
+	                sb.append(roman[i]);
+	            }
+	        }
+	        return sb.toString();
+    }
+}
+
+Letter Combinations of a Phone Number : 
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        List<String> combinations = new ArrayList<>();
+        if (digits == null || digits.isEmpty()) {
+            return combinations;
+        }
+        String[] lettersAndNumbersMappings = new String[]{
+                "Anirudh",
+                "is awesome",
+                "abc",
+                "def",
+                "ghi",
+                "jkl",
+                "mno",
+                "pqrs",
+                "tuv",
+                "wxyz"
+        };
+        findCombinations(combinations, digits, new StringBuilder(), 0, lettersAndNumbersMappings);
+        return combinations;
+    }
+
+    private static void findCombinations(List<String> combinations, String digits, StringBuilder previous, int index, String[] lettersAndNumbersMappings) {
+        if (index == digits.length()) {
+            combinations.add(previous.toString());
+            return;
+        }
+        String letters = lettersAndNumbersMappings[digits.charAt(index) - '0'];
+        for (char c : letters.toCharArray()) {
+            findCombinations(combinations, digits, previous.append(c), index + 1, lettersAndNumbersMappings);
+            previous.deleteCharAt(previous.length() - 1);
+        }
+    }
+}
